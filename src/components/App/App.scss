@@ -1,0 +1,108 @@
+.App {
+  display: grid;
+  grid-template-rows: 168px 1fr;
+  height: 100vh;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    overflow-x: scroll;
+    background: var(--gradient-header);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 43px;
+      height: 168px;
+      background: var(--gradient-header-blackout);
+    }
+
+    &::-webkit-scrollbar { 
+      display: none; 
+    }
+  }
+  
+  &__main {
+    display: grid;
+    align-items: self-start;
+    grid-template-rows: 90px 280px max-content;
+    grid-row-gap: 16px;
+    grid-template-areas: 
+    "search search" 
+    "heros heros"
+    "logos logos";
+    padding: 0 20px;
+    background: var(--gradient-main);
+  }
+
+  &__search {
+    grid-area: search;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    max-width: 336px;
+    min-width: 288px;
+  }
+
+  &__hero-list {
+    grid-area: heros;
+    display: grid;
+    height: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar { 
+      display: none; 
+    }
+  }
+
+  &__logos {
+    grid-area: logos;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &__logo {
+    display: block;
+    opacity: 0.3;
+    transition: opacity 0.4s;
+
+    &--selected {
+      opacity: 1;
+    }
+  }
+}
+
+@media all and (max-width: 374px) {
+  .App__main {
+    grid-template-rows: 80px 205px max-content;
+    padding-left: 16px;
+  }
+}
+
+@media all and (min-width: 721px) {
+  .App__main {
+    grid-template-rows: 90px 130px max-content;
+  }
+}
+
+@media all and (min-width: 767px) {
+  .App {
+
+    &__main {
+      grid-template-rows: 90px 130px;
+      grid-template-areas: 
+      "search logos" 
+      "heros heros"
+    }
+
+    &__logos {
+      width: 340px;
+      height: 100%;
+      justify-content: flex-end;
+    }
+  }
+}

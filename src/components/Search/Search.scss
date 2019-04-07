@@ -1,0 +1,26 @@
+.Search {
+  position: relative;
+  height: 56px;
+  padding: 19px 49px 19px 14px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: var(--grey);
+
+  &__text {
+    width: 100%;
+    border: none;
+    color: var(--white);
+    background: inherit;
+    outline: none;
+
+    &::placeholder {
+      color: var(--white);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+  }
+}

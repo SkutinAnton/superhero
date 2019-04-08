@@ -7,6 +7,12 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 import './Hero.scss';
 
+/**
+ * Компонент супергероя
+ *
+ * @class Hero
+ * @extends {Component}
+ */
 class Hero extends Component {
 
   static propTypes = {

@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
+import { HeroesList, TeamLogo, Search } from '../index';
+import { superhero } from '../../assets/data/superhero'
 import 'normalize.css';
 import '../../assets/style/main.scss';
 import './App.scss';
-import { HeroesList, TeamLogo, Search } from '../index';
-import { superhero } from '../../assets/data/superhero'
 
+/**
+ * Главный компонент
+ *
+ * @class App
+ * @extends {Component}
+ */
 class App extends Component {
 
   state = {

@@ -3,9 +3,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import * as actions from '../../store/actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './Search.scss'
 
+/**
+ * Компонент поиска по супергероям
+ *
+ * @class Search
+ * @extends {Component}
+ */
 class Search extends Component {
+
+  static propTypes = {
+    searchText: PropTypes.string,
+    changeText: PropTypes.func
+  }
   
   /**
    * Текст поиска

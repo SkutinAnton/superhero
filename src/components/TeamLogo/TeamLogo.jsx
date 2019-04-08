@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
-import "react-router-dom";
+import PropTypes from 'prop-types';
 
+/**
+ * Компонент логотипа команды супергероев
+ *
+ * @class TeamLogo
+ * @extends {Component}
+ */
 class TeamLogo extends Component {
+  static propTypes = {
+    link: PropTypes.string,
+    changeText: PropTypes.func
+  }
+
+  /**
+   * Сбросить текст поиска
+   *
+   * @memberof TeamLogo
+   */
   resetSearchText = () => {
     this.props.changeText('');
   }

@@ -6,6 +6,12 @@ import { superhero } from '../../assets/data/superhero';
 import { connect } from 'react-redux';
 import './HeroesList.scss';
 
+/**
+ * Компонент списка супергероев
+ *
+ * @class HeroesList
+ * @extends {Component}
+ */
 class HeroesList extends Component {
 
   state = {
@@ -15,6 +21,7 @@ class HeroesList extends Component {
   static propTypes = {
     isMyTeam: PropTypes.bool,
     url: PropTypes.string,
+    searchText: PropTypes.string
   }
 
   componentDidMount() {
@@ -29,9 +36,7 @@ class HeroesList extends Component {
 
     if (isMyTeam && JSON.stringify(heroesList) !== JSON.stringify(prevState.heroes)) {
       this.getHeroesFromStore();
-    }
-
-    if (!isMyTeam && prevProps.searchText !== searchText) {
+    } else if (!isMyTeam && prevProps.searchText !== searchText) {
       this.getHeroesFromUrl();
     }
   }

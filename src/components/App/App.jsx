@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
-import { HeroesList, TeamLogo, Search } from '../index';
+import { HeroesList, TeamLogo, Search, Preload } from '../index';
 import { superhero } from '../../assets/data/superhero'
 import 'normalize.css';
 import '../../assets/style/main.scss';
@@ -17,12 +17,23 @@ class App extends Component {
   state = {
     logos: [],
     routes: [],
+    isPreload: true
   }
 
   componentDidMount() {
+    this.changePreloadStatus();
     const supeheroKeys = Object.keys(superhero);
     this.getLogos(supeheroKeys);
     this.getRoutes(supeheroKeys);
+  }
+
+  /**
+   * Изменить статус прелоуда
+   *
+   * @memberof App
+   */
+  changePreloadStatus() {
+    setTimeout(() => this.setState({ isPreload: false }), 5000);
   }
 
   /**
@@ -61,7 +72,11 @@ class App extends Component {
   }
 
   render() {
-    const { logos, routes } = this.state;
+    const { logos, routes, isPreload } = this.state;
+
+    if (isPreload) {
+      return <Preload />;
+    }
 
     return (
       <div className="App">

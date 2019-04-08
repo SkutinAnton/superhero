@@ -1,0 +1,12 @@
+.Preload {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  background: var(--gradient-dark);
+
+  &__image {
+    width: 100%;
+  }
+}

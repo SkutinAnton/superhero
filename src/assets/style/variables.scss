@@ -9,8 +9,8 @@
   --warm-grey: #C4C4C4;
 
   // цвета градиентов
-  --gradient-header: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+  --gradient-dark: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
   linear-gradient(180deg, #555761 -51.19%, #2B2D35 100%);
+  --gradient-dark-blackout: linear-gradient(270deg, #282930 50%, rgba(40, 41, 48, 0) 100%);
   --gradient-main: linear-gradient(180deg, #31333B 13.26%, #363945 74.59%, #2B2D35 100%);
-  --gradient-header-blackout: linear-gradient(270deg, #282930 50%, rgba(40, 41, 48, 0) 100%);
 }

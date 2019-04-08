@@ -9,7 +9,7 @@
     align-items: center;
     padding: 0 20px;
     overflow-x: scroll;
-    background: var(--gradient-header);
+    background: var(--gradient-dark);
 
     &::after {
       content: '';
@@ -17,7 +17,7 @@
       right: 0;
       width: 43px;
       height: 168px;
-      background: var(--gradient-header-blackout);
+      background: var(--gradient-dark-blackout);
     }
 
     &::-webkit-scrollbar { 

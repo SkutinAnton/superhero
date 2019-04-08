@@ -60,17 +60,27 @@ class Hero extends Component {
     const removeCross = isMyTeam ? this.showRemoveCross(hero) : null;
     const heroCount = isMyTeam ? this.showHeroCount(hero) : null;
     const heroName = !isMyTeam ? this.showHeroName(hero) : null;
-
     const addHero = isMyTeam ? () => {} : this.props.addHero;
-    const imgLink = require(`../../${hero.image}`);
+    let imgLink = require(`../../${hero.image}`);
+
+    if (hero.name === 'Человек-паук' && hero.count >= 30) {
+      imgLink = require('../../assets/img/fat_spider-man.png');
+    }
+
     const HeroClass = classNames({
       'Hero': true,
       'Hero--touch': !isMyTeam,
+      'Hero--spider-man': !isMyTeam,
+    });
+
+    const HeroImageWrapperClass = classNames({
+      'Hero__image-wrapper': true,
+      'Hero__image-wrapper--spider-man': imgLink.includes('fat_spider-man'),
     });
 
     return (
       <div onClick={() => addHero(hero)} className={HeroClass}>
-        <div className="Hero__image-wrapper">
+        <div className={HeroImageWrapperClass}>
           <img src={imgLink} className="Hero__image" alt="Hero" />
           {removeCross}
           {heroCount}

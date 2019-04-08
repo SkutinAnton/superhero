@@ -13,6 +13,10 @@
     border-radius: 8px;
     overflow: hidden;
 
+    &--spider-man {
+      background: #e04747;
+    }
+
     &:hover .Hero__remove {
       z-index: 1;
       opacity: 1;

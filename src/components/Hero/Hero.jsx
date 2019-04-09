@@ -70,7 +70,6 @@ class Hero extends Component {
     const HeroClass = classNames({
       'Hero': true,
       'Hero--touch': !isMyTeam,
-      'Hero--spider-man': !isMyTeam,
     });
 
     const HeroImageWrapperClass = classNames({

@@ -1,0 +1,26 @@
+.Hero-appear {
+  opacity: 0;
+}
+
+.Hero-appear.Hero-appear-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.Hero-enter {
+  opacity: 0;
+}
+
+.Hero-enter.Hero-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.Hero-leave {
+  opacity: 1;
+}
+
+.Hero-leave.Hero-leave-active {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}

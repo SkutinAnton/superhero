@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { superhero } from '../../assets/data/superhero';
 import { connect } from 'react-redux';
+import { CSSTransitionGroup } from 'react-transition-group'
+import './animateHeroList.scss';
 import './HeroesList.scss';
 
 /**
@@ -81,9 +83,9 @@ class HeroesList extends Component {
     return heroes.map(item => {
       const hero = { ...item };
       return (
-        <li key={hero.name}>
+        <div key={hero.name}>
           <Hero isMyTeam={isMyTeam} hero={hero} />
-        </li>
+        </div>
       )
     })
   }
@@ -99,15 +101,20 @@ class HeroesList extends Component {
     });
 
     if (!heroes.length) {
-      return isMyTeam ? 
+      return isMyTeam ?
         <p className="HeroesList--empty-list">Выберите героя</p> :
         <p className="HeroesList--not-found">Ничего не найдено</p>;
     }
 
     return (
-      <ul className={heroesClass}>
+      <CSSTransitionGroup className={heroesClass}
+        transitionName="Hero"
+        transitionAppear={true}
+        transitionAppearTimeout={300}
+        transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}>
         {heroesList}
-      </ul>
+      </CSSTransitionGroup>
     );
   }
 }
